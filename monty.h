@@ -45,6 +45,12 @@ typedef struct instruction_s
 } instruction_t;
 
 /* PROTOTYPES */
+void op_pall(stack_t **stack, unsigned int __attribute__((unused)) line_number);
+int _atoi(char *s);
+char **tokenCommand(char *line, char *delimiter);
+ssize_t read_textfile(const char *filename, size_t letters);
+stack_t *add_dnodeint(stack_t **head, const int n);
+void (*get_op_func(char *opcode))(stack_t **stack, unsigned int line_number);
 
 
 
