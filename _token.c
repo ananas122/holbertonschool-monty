@@ -1,12 +1,12 @@
 #include "monty.h"
 
 /**
- * tokenCommand - splits a string into tokens
+ * _token - splits a string into tokens
  * @line: input string
  * @delimiter: delimiter character
  * Return: array of tokens
  */
-char **tokenCommand(char *line, char *delimiter)
+char **_token(char *line, char *delimiter)
 {
         char **tokens = NULL;
         char *token = NULL;
@@ -21,10 +21,13 @@ char **tokenCommand(char *line, char *delimiter)
         while (token != NULL)
         {
                 tokens[i] = token;
-                i++;
+
+		printf("%s\n", token);
+
+		i++;
+
                 token = strtok(NULL, delimiter);
         }
         tokens[i] = NULL;
         return (tokens);
 }
-
