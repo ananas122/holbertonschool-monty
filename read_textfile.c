@@ -1,18 +1,19 @@
 #include "monty.h"
 
 /**
- * read_textfile - Reads texte file and prints it
+ * readTextFile - Reads texte file and prints it
  * @filename: Le fichier à lire et afficher
  * @letters: la taille du fichier, son nombre de character
  *
- * Return: le nombre de lettre lu et l'affiche
+ * Return: Le texte file tokenisé
  */
 
-ssize_t read_textfile(const char *filename, size_t letters)
+char **readTextFile(const char *filename, size_t letters)
 {
-	ssize_t openFile, readFile, writeFile;
+	ssize_t openFile, readFile;
 	char *buffer;
-
+	char **tokenBuffer;
+	int i, lign = 0;
 
 	if (!filename)
 		return (0);
@@ -32,17 +33,22 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		close(openFile);
 		return (0);
 	}
-
+	
 	buffer[readFile] = '\0';
-	writeFile = write(STDOUT_FILENO, buffer, readFile);
-	if (writeFile == -1 || writeFile != readFile)
-	{
-		free(buffer);
-		close(openFile);
-		return (0);
-	}
+	tokenBuffer = _token(buffer, "\n");
+	
+	for (i = 0; tokenBuffer[i]; i++)
+		lign++;
+
+	printf("%d\n", lign);
+
+	for (i = 0; i < lign; i++)
+		{
+			_token(tokenBuffer[i], " ");
+		}
 
 	free(buffer);
 	close(openFile);
-	return (writeFile);
+
+	return (tokenBuffer);
 }
