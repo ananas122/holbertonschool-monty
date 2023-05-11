@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * _pop - desempiler the top element of the stack.
+ * _pop - desempiler the top element of the stacks.
  * @stack: Double pointer to the head of the stack.
  * @line_number: Line number of the opcode in the Monty file.
  */
