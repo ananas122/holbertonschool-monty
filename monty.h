@@ -53,5 +53,10 @@ void (*getfunc(char *opcode))(stack_t **stack, unsigned int line_number);
 void _push(stack_t **head, unsigned int n, char *token);
 void _freeList(stack_t **head);
 void _pall(stack_t **stack, unsigned int line_number);
+void _add(stack_t **stack, unsigned int line_number);
+void _pint(stack_t **stack, unsigned int line_number);
+void _nop(stack_t **stack, unsigned int line_number);
+void _swap(stack_t **stack, unsigned int line_number);
+void _pop(stack_t **stack, unsigned int line_number);
 
 #endif
