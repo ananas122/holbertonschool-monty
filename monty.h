@@ -11,6 +11,10 @@
 #include <unistd.h>
 #include <string.h>
 
+/* DEFINE */
+
+#define DELIMS "\n\t\a\r ;:"
+
 /* STRUCTURES */
 
 /**
@@ -41,12 +45,13 @@ typedef struct stack_s
 typedef struct instruction_s
 {
 	char *opcode;
-	void (*f)(stack_t **stack, unsigned int);
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 /* PROTOTYPES */
-char **_token(char *line, char *delimiter);
-void readTextFile(const char *filename, size_t letters);
-void (*get_op_func(char *opcode))(stack_t **stack, unsigned int line_number);
+void (*getfunc(char *opcode))(stack_t **stack, unsigned int line_number);
+void _push(stack_t **head, unsigned int n, char *token);
+void _freeList(stack_t **head);
+void _pall(stack_t **stack, unsigned int line_number);
 
 #endif
