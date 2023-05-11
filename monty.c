@@ -3,7 +3,7 @@
 /**
  * main - check the code
  * @ac: nombre d'argument
- * @av: pointer de pointer
+ * @av: pointer de pointers
  * Return: Always 0.
  */
 
