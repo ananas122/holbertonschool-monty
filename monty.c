@@ -2,7 +2,8 @@
 
 /**
  * main - check the code
- *
+ * @ac: nombre d'argument
+ * @av: pointer de pointer
  * Return: Always 0.
  */
 
