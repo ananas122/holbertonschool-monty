@@ -65,7 +65,7 @@ int main(int ac, char **av)
 			else
 			{
 				_freeList(&h);
-				fprintf(stderr, "L%d: unknown instruction %s", line, token);
+				fprintf(stderr, "L%d: unknown instruction %s\n", line, token);
 				exit(EXIT_FAILURE);
 			}
 		}
