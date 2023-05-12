@@ -39,29 +39,33 @@ int main(int ac, char **av)
 		close(openFile);
 		exit(EXIT_FAILURE);
 	}
-
+	
+	/*Obtenir le premier token*/
 	token = strtok(buffer, DELIMS);
 
 	while (token != NULL)
 	{
 		if (isPush == 1)
 		{
-			_push(&h, line, token);
-			isPush = 0;
-			token = strtok(NULL, DELIMS);
+			/*Si la commande "push" a été détectée*/
+			_push(&h, line, token);/*Ajouter le token à la pile*/
+			isPush = 0;/*Réinitialiser le drapeau "push"*/
+			token = strtok(NULL, DELIMS);/*Obtenir le token suivant*/
 			line++;
 			continue;
 		}
 		else if (strcmp(token, "push") == 0)
 		{
-			isPush = 1;
-			token = strtok(NULL, DELIMS);
+			/*Si la commande "push" est détectée*/
+			isPush = 1;/*Activer le drapeau "push"*/
+			token = strtok(NULL, DELIMS);/*Obtenir le token suivant*/
 			continue;
 		}
 		else
 		{
+			/*Si la commande n'est pas "push"*/
 			if (getfunc(token) != 0)
-				getfunc(token)(&h, line);
+				getfunc(token)(&h, line);/*Exécuter la commande correspondante*/
 			else
 			{
 				_freeList(&h);
@@ -71,7 +75,7 @@ int main(int ac, char **av)
 		}
 
 		line++;
-		token = strtok(NULL, DELIMS);
+		token = strtok(NULL, DELIMS);/*Obtenir le token suivant*/
 	}
 
 	_freeList(&h);
