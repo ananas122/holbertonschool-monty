@@ -15,9 +15,9 @@ void _swap(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	/* Échanger les valeurs des deux premiers éléments de la pile*/
-	int tmp = (*stack)->n;
-	(*stack)->n = (*stack)->next->n;
-	(*stack)->next->n = tmp;
+	/* Échanger les valeurs des 2 1er élm de la pile*/
+	int tmp = (*stack)->n;/*stocker la valeur du 1er élm de la pile,*/
+	(*stack)->n = (*stack)->next->n;/*swap la val du 1er élm avc le 2eme élm*/
+	(*stack)->next->n = tmp;/*placer la val tmp dans le 2eme élm.*/
 }
 
