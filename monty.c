@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * main - check the code
+ * main - Open, read, and close file.m.
  * @ac: nombre d'argument
  * @av: pointer de pointers
  * Return: Always 0.
