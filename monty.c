@@ -2,7 +2,7 @@
 
 /**
  * main - Open, read, and close file.m.
- * @ac: nombre d'argument
+ * @ac: nombre d'arguments
  * @av: pointer de pointers
  * Return: Always 0.
  */
