@@ -20,10 +20,10 @@ void _add(stack_t **stack, unsigned int line_number)
 	}
 
 	/* Obtenir les valeurs des 2 1er éléments*/
-	a = (*stack)->n;
-	b = (*stack)->next->n;
+	a = (*stack)->n;/*Stocker la valeur du premier élément dans 'a*/
+	b = (*stack)->next->n;/* Stocker la valeur du deuxième élément dans 'b'*/
 	result = a + b;
 	/*stockage dans le 2eme elm top*/
 	_pop(stack, line_number);
-	(*stack)->n = result;
+	(*stack)->n = result;/*stocker la sum ds le 1er elm de la P*/
 }
