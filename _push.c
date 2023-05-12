@@ -4,7 +4,7 @@
  * _push - ajoute un nouveau noeud en haut de la liste
  * @head: Double pointer en haut de la liste
  * @n: interger to be added to the dlistint_t list
- *
+ * @token: Chaîne de caractères représentant l'opération à effectuer
  */
 
 void _push(stack_t **head, unsigned int n, char *token)
