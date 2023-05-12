@@ -12,11 +12,11 @@ void (*getfunc(char *opcode))(stack_t **stack, unsigned int line_number)
 	int i = 0;
 	instruction_t op_struct[] = {
 		{"pall", _pall},
-		{"pint", NULL},
-		{"pop", NULL},
-		{"swap", NULL},
-		{"add", NULL},
-		{"nop", NULL},
+		{"pint", _pint},
+		{"pop", _pop},
+		{"swap", _swap},
+		{"add", _add},
+		{"nop", _nop},
 		{NULL, NULL}
 	};
 
