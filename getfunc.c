@@ -20,7 +20,8 @@ void (*getfunc(char *opcode))(stack_t **stack, unsigned int line_number)
 		{NULL, NULL}
 	};
 
-	/** Loop through array and compare token to opcode */
+	/* Boucle à travers le tab d'instructions et comparer le token à l'opcode */
+	/* Vérifier si le token correspond à l'opcode de l'instruction*/
 	for (; op_struct[i].opcode != NULL; i++)
 	{
 		if (strcmp(opcode, op_struct[i].opcode) == 0)
