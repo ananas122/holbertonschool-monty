@@ -10,7 +10,7 @@ void _freeList(stack_t **head)
 	if (!head)
 		return;
 
-	while(*head && (*head)->next)
+	while (*head && (*head)->next)
 	{
 		*head = (*head)->next;
 		free((*head)->prev);
