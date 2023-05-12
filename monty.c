@@ -17,14 +17,14 @@ int main(int ac, char **av)
 
 	if (ac != 2)
 	{
-		dprintf(2, "Usage: %s file\n", av[0]);
+		fprintf(stderr, "Usage: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 
 	openFile = open(av[1], O_RDONLY);
 	if (openFile == -1)
 	{
-		printf("ERROR");
+		fprintf(stderr,"Error: can't open file %s", av[1]);
 		exit(EXIT_FAILURE);
 	}
 
@@ -65,7 +65,7 @@ int main(int ac, char **av)
 			else
 			{
 				_freeList(&h);
-				printf("L%d: unknown instruction %s\n", line, token);
+				fprintf(stderr, "L%d: unknown instruction %s\n", line, token);
 				exit(EXIT_FAILURE);
 			}
 		}
