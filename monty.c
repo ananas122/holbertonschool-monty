@@ -78,3 +78,4 @@ int main(int ac, char **av)
 	free(buffer);
 	close(openFile);
 	return (0);
+}
